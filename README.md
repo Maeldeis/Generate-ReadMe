@@ -2,6 +2,8 @@
 
 This is a command-line application designed to simplify the creation of professional README.md files.
 
+![Top Language](https://img.shields.io/github/languages/top/lernantino/badmath)
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -30,11 +32,9 @@ For a visual demonstration, watch the demo video [here](https://www.capcut.com).
 
 ## License
 
-This project is licensed under the MIT License.![Static Badge](https://img.shields.io/badge/MIT--License-blue)
+![Static Badge](https://img.shields.io/badge/MIT--License-blue) This project is licensed under the MIT License.
 
 ---
-
-![Top Language](https://img.shields.io/github/languages/top/lernantino/badmath)
 
 ## How to Contribute
 
