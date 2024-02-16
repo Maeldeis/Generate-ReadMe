@@ -1,30 +1,37 @@
-## <ReadMe-Generator>
+# README Generator
 
-### Command-line application that allows you to create a professional README.md
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-### Table of Contents
+A command-line application that helps you create professional README.md files.
+
+## Table of Contents
 
 - [Installation](#installation)
-- [Instructions](#Instructions)
+- [Instructions](#instructions)
 - [Usage](#usage)
-- [Languages](#Languages)
+- [Technologies/Languages](#technologies-languages)
 - [Demo Video](#demo-video)
 - [License](#license)
-- [Badges](#badges) (optional)
+- [Badges](#badges)
 - [How to Contribute](#how-to-contribute)
 
-### Installation
+## Installation
 
-To use the `README Generator`, you need to have [Node.JS] installed on your machine.
+To use the README Generator, ensure you have [Node.js](https://nodejs.org/) installed on your machine.
 
-### Instructions
+## Instructions
 
-- Step 1
-  - Clone this [Repo] on to your local machine.
-- Step 2
-  - Open terminal from root of `README-generator` and install dependencies with the following commands:
-  ```bash
-  npm install
+### Step 1
+
+Clone this [Repo] to your local machine.
+
+### Step 2
+
+Navigate to the root of the `README-generator` in your terminal and install dependencies with:
+
+```bash
+npm install
+
 
 ### Usage
 
@@ -46,7 +53,7 @@ Wacth demo video [here](https://www.capcut.com)
 
 ## License
 
-MIT
+This project is licensed under the MIT License.
 
 ---
 
@@ -54,7 +61,7 @@ MIT
 
 ![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
 
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
+Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). .
 
 ## How to Contribute
 
