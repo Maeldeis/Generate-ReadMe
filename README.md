@@ -10,7 +10,6 @@ This is a command-line application designed to simplify the creation of professi
 - [Technologies/Languages](#technologies-languages)
 - [Demo Video](#demo-video)
 - [License](#license)
-- [Badges](#badges)
 - [How to Contribute](#how-to-contribute)
 
 ## Installation
