@@ -1,54 +1,54 @@
-# Generate-ReadMe
-Command-line application that allows you to create a professional README.md.
-Request-Response
+## <ReadMe-Generator>
 
-# <Your-Project-Title>
+### Command-line application that allows you to create a professional README.md
 
-## Description
-
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Table of Contents
+### Table of Contents
 
 - [Installation](#installation)
+- [Instructions](#Instructions)
 - [Usage](#usage)
-- [Credits](#credits)
+- [Languages](#Languages)
+- [Demo Video](#demo-video)
 - [License](#license)
+- [Badges](#badges) (optional)
+- [How to Contribute](#how-to-contribute)
 
-## Installation
+### Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+To use the `README Generator`, you need to have [Node.JS] installed on your machine.
 
-## Usage
+### Instructions
 
-Provide instructions and examples for use. Include screenshots as needed.
+- Step 1
+  - Clone this [Repo] on to your local machine.
+- Step 2
+  - Open terminal from root of `README-generator` and install dependencies with the following commands:
+  ```bash
+  npm install
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+### Usage
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+Use external terminal from IDE
 
-## Credits
+```markdown
+![alt text](assets/images/screenshot.png)
 
-List your collaborators, if any, with links to their GitHub profiles.
+## Technologies/Languages
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+- JavaScript
+- [Node.js](https://nodejs.org/)
+- NPM
+- [Inquirer](https://www.npmjs.com/package//inquirer)
 
-If you followed tutorials, include links to those here as well.
+## Demo Video
+
+Wacth demo video [here](https://www.capcut.com)
 
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+MIT
 
 ---
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
 
 ## Badges
 
@@ -56,15 +56,6 @@ The last section of a high-quality README file is the license. This lets other d
 
 Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
 
-## Features
-
-If your project has a lot of features, list them here.
-
 ## How to Contribute
 
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
-
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
-A GitHub profile with consistently high-quality README files is sure to help you stand out among the crowd of developers putting their work on GitHub, so make sure you give these important files the time and attention they deserve.
+To contribute, contact Maeldeis through GitHub.
