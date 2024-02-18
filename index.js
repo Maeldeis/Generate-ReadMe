@@ -2,20 +2,47 @@ const fs = require("fs");
 const path = require('path');
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
+const { setLicense } = require('./utils/setLicense');
 
-// array of questions for user
-const questions = [
+function promptUser() {
+    return inquirer.prompt(questions);
+}
 
-];
 
-// function to write README file
 function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, err => {
+        if (err) {
+            console.error("Error writing README file:", err);
+        } else {
+            console.log("README file written successfully!");
+        }
+    });
 }
 
-// function to initialize program
+
 function init() {
+    
+    promptUser()
+        .then(answers => {
+       
+            const selectedLicense = answers.license;
 
+            
+            const { badge, notice } = setLicense(selectedLicense);
+
+           
+            answers.licenseBadge = badge;
+            answers.licenseNotice = notice;
+
+          
+            const readmeContent = generateMarkdown(answers);
+
+         
+            writeToFile('README.md', readmeContent);
+        })
+        .catch(error => {
+            console.error("Error occurred:", error);
+        });
 }
 
-// function call to initialize program
 init();
