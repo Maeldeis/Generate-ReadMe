@@ -51,4 +51,63 @@ export const questions = [
       message: "include installation guidelines?",
     },
   
-    
+    {
+        type: 'editor',
+        name: 'installation',
+        message: 'Add installation guidelines:',
+        when(answers) {
+          return answers.includeInstallation === true;
+        },
+        validate(input) {
+          return input.trim() !== '' ? true : 'Please enter an installation guide for your project';
+        }
+      },
+      {
+        type: "confirm",
+        name: "includeUsage",
+        message: "include usage guidelines?",
+      },
+      {
+        type: 'editor',
+        name: 'usage',
+        message: 'Add usage guidelines:',
+        when(answers) {
+          return answers.includeUsage === true;
+        },
+        validate(input) {
+          return input.trim() !== '' ? true : 'Please enter a usage guide for your project';
+        }
+      },
+      {
+        type: "confirm",
+        name: "includeContribution",
+        message: "include contribution guidelines?",
+      },
+      {
+        type: 'editor',
+        name: 'contribution',
+        message: 'Add contributing guidlines:',
+        when(answers) {
+          return answers.includeContribution === true;
+        },
+        validate(input) {
+          return input.trim() !== '' ? true : 'Please enter a contribution guide for your project';
+        }
+      },
+      {
+        type: "confirm",
+        name: "includeTest",
+        message: "include test guidelines?",
+      },
+      {
+        type: 'editor',
+        name: 'tests',
+        message: 'Add test guidelines:',
+        when(answers) {
+          return answers.includeTest === true;
+        },
+        validate(input) {
+          return input.trim() !== '' ? true : 'Please enter a tests guide for your project';
+        }
+      },
+   
