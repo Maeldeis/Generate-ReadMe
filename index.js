@@ -7,7 +7,7 @@ import { generateMarkdown } from "./utils/generateMarkdown.js";
 
 const writeToFile = (fileName, data) => {
 
-  const filePath = path.resolve("./generated-readme", fileName); 
+  const filePath = path.resolve("./generatedMarkdown", fileName); 
 
   fs.writeFile(filePath, data, err => {
     if (err) throw err;
