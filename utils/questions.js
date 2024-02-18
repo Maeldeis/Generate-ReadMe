@@ -1,4 +1,4 @@
-n
+
 function createConfirmationQuestion(name, message) {
     return {
         type: "confirm",
