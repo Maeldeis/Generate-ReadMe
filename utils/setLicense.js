@@ -1,4 +1,4 @@
-export const setLicense = (license) => {
+function setLicense(license) {
     let licenseBadge = '';
     let licenseNotice = '';
 
@@ -32,4 +32,6 @@ export const setLicense = (license) => {
     }
 
     return { badge: licenseBadge, notice: licenseNotice };
-};
+}
+
+module.exports = { setLicense };
