@@ -1,14 +1,28 @@
 {
-  "name": "static-site",
+  "name": "generate-readme",
   "version": "1.0.0",
-  "description": "",
+  "description": "An application using command line for generating a README file.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maeldeis/generate-readme.git"
+  },
+  "keywords": [
+    "Profesional",
+    "README",
+    "Generator"
+  ],
+  "author": "Maeldeis",
+  "license": "GPL v3",
+  "bugs": {
+    "url": "https://github.com/maeldeis/generate-readme/issues"
+  },
+  "homepage": "https://github.com/maeldeis/generate-readme#readme",
   "dependencies": {
-    "inquirer": "^6.3.1"
+    "inquirer": "^9.2.14"
   }
 }
