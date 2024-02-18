@@ -110,4 +110,39 @@ export const questions = [
           return input.trim() !== '' ? true : 'Please enter a tests guide for your project';
         }
       },
-   
+      {
+        type: "confirm",
+        name: "includeGithub",
+        message: "include GitHub username?",
+      },
+      {
+        type: 'input',
+        name: 'github',
+        message: 'Add GitHub username:',
+        when(answers) {
+          return answers.includeGithub === true;
+        },
+        validate(input) {
+          const githubUsernameRegex = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
+          return githubUsernameRegex.test(input) ? true : 'Please enter a valid GitHub username';
+        },
+      },
+      {
+        type: "confirm",
+        name: "includeEmail",
+        message: "include E-Mail?",
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: 'Add E-Mail:',
+        when(answers) {
+          return answers.includeEmail === true;
+        },
+        validate(input) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailRegex.test(input) ? true : 'Please enter a valid email address';
+        },
+      }
+    ];
+    
