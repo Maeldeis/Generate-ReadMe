@@ -1,50 +1,45 @@
-// function to generate markdown for README
-function generateMarkdown(data) {
-  let markdown = `# ${data.title}\n\n`;
+import { setLicense } from "./setLicense.js";
 
-  // Description section
-  if (data.includeDescription && data.description) {
-      markdown += `## Description\n${data.description}\n\n`;
-  }
+export const generateMarkdown = (data) => {
+  const { title, description, installation, usage, license, contribution, tests, github, email } = data;
 
-  // License section
-  if (data.includeLicense && data.licenseBadge && data.licenseNotice) {
-      markdown += `## License\n${data.licenseBadge}\n${data.licenseNotice}\n\n`;
-  }
+  const titleSection = title ? `# ${title}\n` : "";
+  const { badge: licenseBadge, notice: licenseNotice } = setLicense(license);
+  const descriptionSection = description ? `## Description\n\n${description}\n` : "";
+  const installationSection = installation ? `## Installation\n\n${installation}\n` : "";
+  const usageSection = usage ? `## Usage\n\n${usage}\n` : "";
+  const licenseSection = licenseBadge ? `## License\n\n${licenseNotice}\n` : "";
+  const contributingSection = contribution ? `## Contributing\n\n${contribution}\n` : "";
+  const testsSection = tests ? `## Tests\n\n${tests}\n` : "";
+  const questionsSection = github || email ? '## Questions\n' : ""
+  const gitHub = github ? `Visit my [GitHub](https://github.com/${github}) profile\n` : "";
+  const eMail = email ? `Feel free to [E-Mail](mailto:${email}) me\n` : "";
 
-  // Installation section
-  if (data.includeInstallation && data.installation) {
-      markdown += `## Installation\n${data.installation}\n\n`;
-  }
+  const sections = [
+    { title: "Description", content: descriptionSection },
+    { title: "Installation", content: installationSection },
+    { title: "Usage", content: usageSection },
+    { title: "License", content: licenseSection },
+    { title: "Contributing", content: contributingSection },
+    { title: "Tests", content: testsSection },
+    { title: "Questions", content: questionsSection }
+  ];
 
-  // Usage section
-  if (data.includeUsage && data.usage) {
-      markdown += `## Usage\n${data.usage}\n\n`;
-  }
+  const tableOfContents = sections.filter(section =>
+    section.content).map(section => `- [${section.title}](#${section.title.toLowerCase()})`).join('\n');
 
-  // Contribution section
-  if (data.includeContribution && data.contribution) {
-      markdown += `## Contribution\n${data.contribution}\n\n`;
-  }
-
-  // Tests section
-  if (data.includeTest && data.tests) {
-      markdown += `## Tests\n${data.tests}\n\n`;
-  }
-
-  // Questions section
-  if (data.includeGithub || data.includeEmail) {
-      markdown += `## Questions\n`;
-      if (data.includeGithub && data.github) {
-          markdown += `- GitHub: [@${data.github}](https://github.com/${data.github})\n`;
-      }
-      if (data.includeEmail && data.email) {
-          markdown += `- Email: ${data.email}\n`;
-      }
-      markdown += '\n';
-  }
-
-  return markdown;
+  return (
+    `${titleSection}
+${licenseBadge}\n
+${descriptionSection}
+${tableOfContents ? `${tableOfContents}\n` : ''}
+${installationSection}
+${usageSection}
+${licenseSection}
+${contributingSection}
+${testsSection}
+${questionsSection}
+${gitHub}
+${eMail}
+`)
 }
-
-module.exports = generateMarkdown;
