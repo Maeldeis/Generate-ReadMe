@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/maeldeis/generate-readme#readme",
   "dependencies": {
+    "i": "^0.3.7",
     "inquirer": "^9.2.14"
   }
 }
