@@ -1,49 +1,31 @@
-const fs = require("fs");
-const path = require('path');
-const inquirer = require("inquirer");
-const { questions } = require('./utils/questions');
-const generateMarkdown = require("./utils/generateMarkdown");
-const { setLicense } = require('./utils/setLicense');
+import fs from "fs/promises";
+import path from 'path'
+import inquirer from "inquirer";
+import { questions } from "./utils/questions.js";
+import { generateMarkdown } from "./utils/generateMarkdown.js";
 
-function promptUser() {
-    return inquirer.prompt(questions);
+
+const writeToFile = (fileName, data) => {
+
+  const filePath = path.resolve("./generated-readme", fileName); 
+
+  fs.writeFile(filePath, data, err => {
+    if (err) throw err;
+  });
 }
 
+const init = async () => {
+  try {
+    const answers = await inquirer.prompt(questions);
+    const markdownContent = generateMarkdown(answers);
 
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, err => {
-        if (err) {
-            console.error("Error writing README file:", err);
-        } else {
-            console.log("README file written successfully!");
-        }
-    });
+    writeToFile("README.md", markdownContent); 
+
+    console.log("Successfully generated!");
+  } catch (error) {
+    console.error("Error occurred:", error);
+  }
 }
 
-
-function init() {
-    
-    promptUser()
-        .then(answers => {
-       
-            const selectedLicense = answers.license;
-
-            
-            const { badge, notice } = setLicense(selectedLicense);
-
-           
-            answers.licenseBadge = badge;
-            answers.licenseNotice = notice;
-
-          
-            const readmeContent = generateMarkdown(answers);
-
-         
-            writeToFile('README.md', readmeContent);
-        })
-        .catch(error => {
-            console.error("Error occurred:", error);
-        });
-}
 
 init();
