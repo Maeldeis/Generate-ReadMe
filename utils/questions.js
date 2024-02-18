@@ -42,42 +42,10 @@ export const questions = [
         return answers.includeDescription === true;
       },
       validate(input) {
-        return input.trim() !== '' ? true : 'Please enter a description for your project';
+        return input.trim() !== '' ? true : 'Enter a description for your project';
       }
     },
-    {
-      type: "confirm",
-      name: "includeInstallation",
-      message: "include installation guidelines?",
-    },
-  
-    {
-        type: 'editor',
-        name: 'installation',
-        message: 'Add installation guidelines:',
-        when(answers) {
-          return answers.includeInstallation === true;
-        },
-        validate(input) {
-          return input.trim() !== '' ? true : 'Please enter an installation guide for your project';
-        }
-      },
-      {
-        type: "confirm",
-        name: "includeUsage",
-        message: "include usage guidelines?",
-      },
-      {
-        type: 'editor',
-        name: 'usage',
-        message: 'Add usage guidelines:',
-        when(answers) {
-          return answers.includeUsage === true;
-        },
-        validate(input) {
-          return input.trim() !== '' ? true : 'Please enter a usage guide for your project';
-        }
-      },
+    
       {
         type: "confirm",
         name: "includeContribution",
@@ -91,23 +59,7 @@ export const questions = [
           return answers.includeContribution === true;
         },
         validate(input) {
-          return input.trim() !== '' ? true : 'Please enter a contribution guide for your project';
-        }
-      },
-      {
-        type: "confirm",
-        name: "includeTest",
-        message: "include test guidelines?",
-      },
-      {
-        type: 'editor',
-        name: 'tests',
-        message: 'Add test guidelines:',
-        when(answers) {
-          return answers.includeTest === true;
-        },
-        validate(input) {
-          return input.trim() !== '' ? true : 'Please enter a tests guide for your project';
+          return input.trim() !== '' ? true : 'Enter a contribution guide for your project';
         }
       },
       {
@@ -124,7 +76,7 @@ export const questions = [
         },
         validate(input) {
           const githubUsernameRegex = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
-          return githubUsernameRegex.test(input) ? true : 'Please enter a valid GitHub username';
+          return githubUsernameRegex.test(input) ? true : 'Enter a valid GitHub username';
         },
       },
       {
@@ -141,7 +93,7 @@ export const questions = [
         },
         validate(input) {
           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          return emailRegex.test(input) ? true : 'Please enter a valid email address';
+          return emailRegex.test(input) ? true : 'Enter a valid email address';
         },
       }
     ];
