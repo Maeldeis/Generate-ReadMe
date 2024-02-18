@@ -45,23 +45,6 @@ export const questions = [
         return input.trim() !== '' ? true : 'Enter a description for your project';
       }
     },
-    
-      {
-        type: "confirm",
-        name: "includeContribution",
-        message: "include contribution guidelines?",
-      },
-      {
-        type: 'editor',
-        name: 'contribution',
-        message: 'Add contributing guidlines:',
-        when(answers) {
-          return answers.includeContribution === true;
-        },
-        validate(input) {
-          return input.trim() !== '' ? true : 'Enter a contribution guide for your project';
-        }
-      },
       {
         type: "confirm",
         name: "includeGithub",
