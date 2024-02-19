@@ -4,11 +4,11 @@ export const generateMarkdown = (data) => {
   const titleSection = title ? `# ${title}\n` : "";
   const { badge: licenseBadge, notice: licenseNotice } = setLicense(license);
   const descriptionSection = description ? `## Description\n\n${description}\n` : "";
-  const licenseSection = licenseBadge ? `## License\n\n${licenseNotice}\n` : "";
   const contributingSection = contribution ? `## Contributing\n\n${contribution}\n` : "";
+  const licenseSection = licenseBadge ? `## License\n\n${licenseNotice}\n` : "";
   const questionsSection = github || email ? '## Questions\n' : ""
-  const gitHub = github ? `Visit my [GitHub](https://github.com/${github}) profile\n` : "";
   const eMail = email ? `Feel free to [E-Mail](mailto:${email}) me\n` : "";
+  const gitHub = github ? `Visit my [GitHub](https://github.com/${github}) profile\n` : "";
   const sections = [
     { title: "Description", content: descriptionSection },
     { title: "License", content: licenseSection },

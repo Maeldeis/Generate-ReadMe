@@ -2,7 +2,7 @@ export const questions = [
     {
       type: "confirm",
       name: "includeTitle",
-      message: "include Title?",
+      message: " would you like to include a Title?",
     },
     {
       type: "input",
@@ -12,7 +12,7 @@ export const questions = [
         return answers.includeTitle === true;
       },
       validate(input) {
-        return input.trim() !== '' ? true : 'Please enter a title for your project';
+        return input.trim() !== '' ? true : 'Please enter the title for your project';
       }
     },
     {
@@ -32,51 +32,50 @@ export const questions = [
     {
       type: "confirm",
       name: "includeDescription",
-      message: "include description?",
+      message: "would you like to include a description?",
     },
     {
       type: "input",
       name: "description",
-      message: "Add description of your project:",
+      message: "Add the description of your project:",
       when(answers) {
         return answers.includeDescription === true;
       },
       validate(input) {
-        return input.trim() !== '' ? true : 'Enter a description for your project';
+        return input.trim() !== '' ? true : 'Enter the description for your project';
       }
     },
     
       {
         type: "confirm",
         name: "includeContribution",
-        message: "include contribution guidelines?",
+        message: "Would you like to include contributions?",
       },
       {
         type: 'input',
         name: 'contribution',
-        message: 'Add contributing guidlines:',
+        message: 'Add your contributors',
         when(answers) {
           return answers.includeContribution === true;
         },
         validate(input) {
-          return input.trim() !== '' ? true : 'Enter a contribution guide for your project';
+          return input.trim() !== '' ? true : 'Enter the contributors';
         }
       },
       {
         type: "confirm",
         name: "includeGithub",
-        message: "include GitHub username?",
+        message: "Would you like to include your GitHub username?",
       },
       {
         type: 'input',
         name: 'github',
-        message: 'Add GitHub username:',
+        message: 'Add your GitHub username:',
         when(answers) {
           return answers.includeGithub === true;
         },
         validate(input) {
-          const githubUsernameRegex = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
-          return githubUsernameRegex.test(input) ? true : 'Enter a valid GitHub username';
+          return input.trim() !== '' ? true : 'Enter your GitHub username';
         },
       },
       {
@@ -92,9 +91,7 @@ export const questions = [
           return answers.includeEmail === true;
         },
         validate(input) {
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          return emailRegex.test(input) ? true : 'Enter a valid email address';
+          return input.trim() !== '' ? true : 'Enter your email';
         },
-      }
-    ];
-    
+      },
+    ];  
